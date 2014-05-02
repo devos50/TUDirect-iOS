@@ -1,3 +1,4 @@
+For the Android version, go to [the other GitHub repository!](https://github.com/ldfversluis/TUDirect-Android)
 TUDirect-iOS
 ================
 
