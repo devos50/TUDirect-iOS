@@ -7,13 +7,46 @@
 //
 
 #import "AppDelegate.h"
+#import "AFNetworking.h"
+
+#define kValidGradesURL @"http://api.tudelft.nl/v0/geldendstudieresultaten"
 
 @implementation AppDelegate
+{
+    TUAuthClient *b;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    b = [[TUAuthClient alloc] initWithClientID:@"tudirect" clientSecret:@"36481f4d-0188-42e9-95a4-b99b3ff35ce9" redirectURI:@"http://ios-dev.no-ip.org/tuiosapp"];
+    
     return YES;
+}
+
+- (void)checkToken
+{
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"AccessToken"];
+    NSString *urlstr = [kValidGradesURL stringByAppendingFormat:@"?oauth_token=%@", accessToken];
+    
+    NSURL *url = [NSURL URLWithString:urlstr];
+    AFHTTPClient *client = [AFHTTPClient clientWithBaseURL:url];
+    NSURLRequest *request = [client requestWithMethod:@"GET" path:url.absoluteString parameters:nil];
+    NSLog(@"access token: %@", accessToken);
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
+    {
+        if(JSON[@"error"]) [b authorize];
+    }
+    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
+    {
+        [b authorize];
+    }];
+    
+    [operation start];
+}
+
+- (TUAuthClient *)getAuthClient;
+{
+    return b;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
