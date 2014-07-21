@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1095F811197D057A00A4C567 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1095F810197D057A00A4C567 /* Images.xcassets */; };
 		9F10E7B816EA269B00B82097 /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F10E7B616EA269B00B82097 /* 145-persondot.png */; };
 		9F10E7B916EA269B00B82097 /* 145-persondot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F10E7B716EA269B00B82097 /* 145-persondot@2x.png */; };
 		9F10E7BD16EA270600B82097 /* GradesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F10E7BC16EA270600B82097 /* GradesTableViewController.m */; };
@@ -15,8 +16,6 @@
 		9F10E7C416EA2AE300B82097 /* SpecificProgressTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F10E7C316EA2AE300B82097 /* SpecificProgressTableViewController.m */; };
 		9F11F22316F9AC1C00D898C2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F11F22216F9AC1C00D898C2 /* MessageUI.framework */; };
 		9F1AFDBF16F7AFA6008FDAC3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1AFDBE16F7AFA6008FDAC3 /* MapKit.framework */; };
-		9F1AFDC216F7B072008FDAC3 /* tuapp_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1AFDC116F7B072008FDAC3 /* tuapp_retina.png */; };
-		9F1AFDC416F7B075008FDAC3 /* tuapp_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1AFDC316F7B075008FDAC3 /* tuapp_small.png */; };
 		9F30C4D4170B06F70057EABD /* DetermineScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F30C4D3170B06F70057EABD /* DetermineScheduleViewController.m */; };
 		9F30C4DF170B0A7B0057EABD /* IOS5ScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F30C4DE170B0A7B0057EABD /* IOS5ScheduleTableViewController.m */; };
 		9F43AE4C16F8D5DF006F98F7 /* WorkplacesInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F43AE4B16F8D5DF006F98F7 /* WorkplacesInfoTableViewController.m */; };
@@ -25,7 +24,6 @@
 		9F43AE5E16F9021B006F98F7 /* 96-book.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F43AE5C16F9021B006F98F7 /* 96-book.png */; };
 		9F43AE5F16F9021B006F98F7 /* 96-book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F43AE5D16F9021B006F98F7 /* 96-book@2x.png */; };
 		9F557C1D16F714FE00C479AA /* TUAuthClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F557C1C16F714FE00C479AA /* TUAuthClient.m */; };
-		9F5FE62F18788AAD001ECDF8 /* tuapp_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F5FE62E18788AAD001ECDF8 /* tuapp_120.png */; };
 		9FA6DE6216F8A45300A15E0A /* BuildingsMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA6DE6116F8A45300A15E0A /* BuildingsMapViewController.m */; };
 		9FA6DE6916F8A5C600A15E0A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FA6DE6816F8A5C600A15E0A /* CoreLocation.framework */; };
 		9FB8331216EA2EB70065814F /* ProgressTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8331116EA2EB70065814F /* ProgressTableViewController.m */; };
@@ -70,6 +68,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1095F810197D057A00A4C567 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TUDirect/Images.xcassets; sourceTree = "<group>"; };
 		9F10E7B616EA269B00B82097 /* 145-persondot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot.png"; sourceTree = "<group>"; };
 		9F10E7B716EA269B00B82097 /* 145-persondot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot@2x.png"; sourceTree = "<group>"; };
 		9F10E7BB16EA270600B82097 /* GradesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradesTableViewController.h; sourceTree = "<group>"; };
@@ -80,8 +79,6 @@
 		9F10E7C316EA2AE300B82097 /* SpecificProgressTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecificProgressTableViewController.m; sourceTree = "<group>"; };
 		9F11F22216F9AC1C00D898C2 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		9F1AFDBE16F7AFA6008FDAC3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		9F1AFDC116F7B072008FDAC3 /* tuapp_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuapp_retina.png; sourceTree = "<group>"; };
-		9F1AFDC316F7B075008FDAC3 /* tuapp_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuapp_small.png; sourceTree = "<group>"; };
 		9F30C4D2170B06F70057EABD /* DetermineScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetermineScheduleViewController.h; sourceTree = "<group>"; };
 		9F30C4D3170B06F70057EABD /* DetermineScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetermineScheduleViewController.m; sourceTree = "<group>"; };
 		9F30C4DD170B0A7B0057EABD /* IOS5ScheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOS5ScheduleTableViewController.h; sourceTree = "<group>"; };
@@ -96,7 +93,6 @@
 		9F43AE5D16F9021B006F98F7 /* 96-book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "96-book@2x.png"; sourceTree = "<group>"; };
 		9F557C1B16F714FE00C479AA /* TUAuthClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUAuthClient.h; sourceTree = "<group>"; };
 		9F557C1C16F714FE00C479AA /* TUAuthClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUAuthClient.m; sourceTree = "<group>"; };
-		9F5FE62E18788AAD001ECDF8 /* tuapp_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuapp_120.png; sourceTree = "<group>"; };
 		9FA6DE6016F8A45300A15E0A /* BuildingsMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildingsMapViewController.h; sourceTree = "<group>"; };
 		9FA6DE6116F8A45300A15E0A /* BuildingsMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingsMapViewController.m; sourceTree = "<group>"; };
 		9FA6DE6816F8A5C600A15E0A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -189,9 +185,7 @@
 		9FDEBE0216E7F0FD00EE0E42 = {
 			isa = PBXGroup;
 			children = (
-				9F5FE62E18788AAD001ECDF8 /* tuapp_120.png */,
-				9F1AFDC316F7B075008FDAC3 /* tuapp_small.png */,
-				9F1AFDC116F7B072008FDAC3 /* tuapp_retina.png */,
+				1095F810197D057A00A4C567 /* Images.xcassets */,
 				9FDEBE1716E7F0FD00EE0E42 /* TUTest */,
 				9FDEBE1016E7F0FD00EE0E42 /* Frameworks */,
 				9FDEBE0E16E7F0FD00EE0E42 /* Products */,
@@ -369,6 +363,11 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Martijn de Vos";
+				TargetAttributes = {
+					9FDEBE0C16E7F0FD00EE0E42 = {
+						DevelopmentTeam = 5T9Z3WMJ28;
+					};
+				};
 			};
 			buildConfigurationList = 9FDEBE0716E7F0FD00EE0E42 /* Build configuration list for PBXProject "TUDirect" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -398,9 +397,9 @@
 				9FDEBE2816E7F0FD00EE0E42 /* Default-568h@2x.png in Resources */,
 				9FDEBE2B16E7F0FD00EE0E42 /* MainStoryboard.storyboard in Resources */,
 				9FDEBE4116E7F17800EE0E42 /* 103-map.png in Resources */,
-				9F5FE62F18788AAD001ECDF8 /* tuapp_120.png in Resources */,
 				9FDEBE4216E7F17800EE0E42 /* 103-map@2x.png in Resources */,
 				9FDEBE7B16E7F57B00EE0E42 /* 60-signpost.png in Resources */,
+				1095F811197D057A00A4C567 /* Images.xcassets in Resources */,
 				9FDEBE7C16E7F57B00EE0E42 /* 60-signpost@2x.png in Resources */,
 				9F10E7B816EA269B00B82097 /* 145-persondot.png in Resources */,
 				9F10E7B916EA269B00B82097 /* 145-persondot@2x.png in Resources */,
@@ -408,8 +407,6 @@
 				9F10E7C116EA29FC00B82097 /* 17-bar-chart@2x.png in Resources */,
 				9FF5768816EA4D34000E6503 /* 11-clock.png in Resources */,
 				9FF5768916EA4D34000E6503 /* 11-clock@2x.png in Resources */,
-				9F1AFDC216F7B072008FDAC3 /* tuapp_retina.png in Resources */,
-				9F1AFDC416F7B075008FDAC3 /* tuapp_small.png in Resources */,
 				9F43AE5E16F9021B006F98F7 /* 96-book.png in Resources */,
 				9F43AE5F16F9021B006F98F7 /* 96-book@2x.png in Resources */,
 			);
@@ -530,7 +527,9 @@
 		9FDEBE3D16E7F0FD00EE0E42 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
@@ -549,7 +548,9 @@
 		9FDEBE3E16E7F0FD00EE0E42 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
