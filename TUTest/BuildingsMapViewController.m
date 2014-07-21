@@ -60,7 +60,10 @@
     // load the buildings on the map
     [_buildings enumerateObjectsUsingBlock:^(NSDictionary *building, NSUInteger idx, BOOL *stop)
      {
+         if(!building[@"fysiekAdres"] || !building[@"fysiekAdres"][@"binnenlandsAdres"]) { return; }
          NSDictionary *address = building[@"fysiekAdres"][@"binnenlandsAdres"];
+         
+         if([address isKindOfClass:[NSNull class]] || !address[@"straat"] || !address[@"huisnummer"] || !address[@"plaats"]) { return; }
          NSString *addressString = [NSString stringWithFormat:@"%@ %@ %@", address[@"straat"], address[@"huisnummer"], address[@"plaats"]];
          
          CLGeocoder *geocoder = [[CLGeocoder alloc] init];
