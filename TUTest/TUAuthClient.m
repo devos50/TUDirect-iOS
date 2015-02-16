@@ -40,6 +40,7 @@ NSString *TUTokenURL = @"https://oauth.tudelft.nl/oauth2/token";
 
 @implementation TUAuthClient
 {
+    UINavigationController *authNavViewController;
     AuthViewController *authViewController;
 }
 
@@ -54,7 +55,8 @@ NSString *TUTokenURL = @"https://oauth.tudelft.nl/oauth2/token";
         _accessToken = nil;
         _queue = [[NSOperationQueue alloc] init];
         
-        authViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"AuthViewController"];
+        authNavViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"AuthViewController"];
+        authViewController = [authNavViewController viewControllers][0];
     }
     return self;
 }
@@ -78,10 +80,10 @@ NSString *TUTokenURL = @"https://oauth.tudelft.nl/oauth2/token";
                          [self urlEncode:_clientID],
                          [self urlEncode:_redirectURI]];
     
-    // [[UIApplication sharedApplication] openURL:[NSURL URLWithString:authURL]];
-    [vc presentViewController:authViewController animated:YES completion:nil];
-    [authViewController loadURL:[NSURL URLWithString:authURL]];
-    [[authViewController getWebView] setDelegate:self];
+    [vc presentViewController:authNavViewController animated:YES completion:^{
+        [authViewController loadURL:[NSURL URLWithString:authURL]];
+        [[authViewController getWebView] setDelegate:self];
+    }];
 }
 
 - (void)token:(NSString*)code onComplete:(TUAccessTokenHandler)onComplete onFailure:(TUFailureHandler)onFailure

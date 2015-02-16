@@ -40,10 +40,9 @@
 {
     return _webView;
 }
-
 - (IBAction)closePressed:(id)sender
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

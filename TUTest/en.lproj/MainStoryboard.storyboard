@@ -84,45 +84,62 @@
             </objects>
             <point key="canvasLocation" x="2255" y="-2408"/>
         </scene>
-        <!--Auth View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="cwf-I0-pgc">
+            <objects>
+                <navigationController storyboardIdentifier="AuthViewController" id="L9X-Tv-fvv" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zhq-Zn-6Hs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7O2-t2-IMg" kind="relationship" relationship="rootViewController" id="pm2-6x-n0D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o0m-OJ-cNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2727" y="-2408"/>
+        </scene>
+        <!--Login-->
         <scene sceneID="9Ew-yx-YTm">
             <objects>
-                <viewController storyboardIdentifier="AuthViewController" id="7O2-t2-IMg" customClass="AuthViewController" sceneMemberID="viewController">
+                <viewController id="7O2-t2-IMg" customClass="AuthViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dDW-QG-z78"/>
                         <viewControllerLayoutGuide type="bottom" id="oaM-RD-eC6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tUe-Z3-TZ5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VMi-D7-k3x">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <color key="tintColor" red="0.0" green="0.65098039220000004" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <items>
-                                    <navigationItem title="Login" id="4kt-gG-k3q">
-                                        <barButtonItem key="rightBarButtonItem" title="Close" id="xaE-XE-dBk">
-                                            <connections>
-                                                <action selector="closePressed:" destination="7O2-t2-IMg" id="T0T-Yo-jwV"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jlm-Rs-mL2">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlm-Rs-mL2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oaM-RD-eC6" firstAttribute="top" secondItem="jlm-Rs-mL2" secondAttribute="bottom" id="C9Q-f1-jey"/>
+                            <constraint firstAttribute="trailing" secondItem="jlm-Rs-mL2" secondAttribute="trailing" id="Tcc-I5-HYC"/>
+                            <constraint firstItem="jlm-Rs-mL2" firstAttribute="top" secondItem="dDW-QG-z78" secondAttribute="bottom" id="gC4-rA-E0M"/>
+                            <constraint firstItem="jlm-Rs-mL2" firstAttribute="leading" secondItem="tUe-Z3-TZ5" secondAttribute="leading" id="qmG-Qs-b3h"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Login" id="YRA-t4-NLs">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="hxv-e6-dmA">
+                            <connections>
+                                <action selector="closePressed:" destination="7O2-t2-IMg" id="Yhf-MO-cLO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="jlm-Rs-mL2" id="nzF-iz-KL5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnB-Wy-aZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2743" y="-2408"/>
+            <point key="canvasLocation" x="3224" y="-2408"/>
         </scene>
         <!--Buildings-->
         <scene sceneID="NkP-ST-ewf">
