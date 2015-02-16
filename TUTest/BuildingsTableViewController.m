@@ -31,6 +31,7 @@
     NSMutableArray *currentData;
     int selectedIndex;
     BOOL showBuildings;
+    NSDictionary *abbrevations;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -45,6 +46,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    abbrevations = @{ @"20" : @"Aula", @"8" : @"BK", @"5" : @"BT", @"23" : @"CT", @"12" : @"ChemE", @"35" : @"DW", @"36" : @"EWI", @"66" : @"FelS", @"32" : @"IO", @"62" : @"LR", @"50" : @"RID", @"37" : @"S&C", @"31" : @"TBM", @"22" : @"TN", @"2" : @"2C", @"34" : @"3mE" };
         
     showBuildings = YES;
     [self loadBuildings];
@@ -149,6 +152,12 @@
     
     // Configure the cell...
     cell.textLabel.text = currentData[indexPath.row][@"naamEN"];
+    NSString *locationCode = currentData[indexPath.row][@"locatieCode"];
+    
+    if(abbrevations[locationCode])
+    {
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", abbrevations[locationCode], cell.textLabel.text];
+    }
     
     return cell;
 }

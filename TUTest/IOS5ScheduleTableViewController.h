@@ -10,4 +10,6 @@
 
 @interface IOS5ScheduleTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSString *courseCode;
+
 @end

@@ -26,19 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    /*
-    // prepare the staff data (filter out EN)
-    NSMutableArray *objtorem = [[NSMutableArray alloc] init];
-    [_information enumerateObjectsUsingBlock:^(NSDictionary *staffMember, NSUInteger idx, BOOL *stop)
-     {
-         if([staffMember[@"@taal"] isEqualToString:@"NL"]) [objtorem addObject:staffMember];
-     }];
-    
-    // remove the objects
-    [objtorem enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
-        [_information removeObject:obj];
-    }];
-     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,13 +85,6 @@
     }
     
     return cell;
-}
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
 }
 
 @end

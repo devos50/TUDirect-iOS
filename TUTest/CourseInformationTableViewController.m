@@ -12,6 +12,7 @@
 #import "AFNetworking.h"
 #import "StaffCourseViewController.h"
 #import "CourseInformationExtraViewController.h"
+#import "IOS5ScheduleTableViewController.h"
 
 #define kCourseInformationURL @"http://api.tudelft.nl/v0/vakken/"
 
@@ -68,10 +69,15 @@
         StaffCourseViewController *vc = segue.destinationViewController;
         vc.staff = [courseInformation[@"extraUnsupportedInfo"][@"vakMedewerkers"] mutableCopy];
     }
-    if([segue.identifier isEqualToString:@"InformationSegue"])
+    else if([segue.identifier isEqualToString:@"InformationSegue"])
     {
         CourseInformationExtraViewController *vc = segue.destinationViewController;
         vc.information = [courseInformation[@"extraUnsupportedInfo"][@"vakUnsupportedInfoVelden"] mutableCopy];
+    }
+    else if([segue.identifier isEqualToString:@"ScheduleSegue"])
+    {
+        IOS5ScheduleTableViewController *vc = segue.destinationViewController;
+        vc.courseCode = courseInformation[@"cursusid"];
     }
 }
 
@@ -118,10 +124,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 2 && indexPath.row == 0)
-        [self performSegueWithIdentifier:@"StaffSegue" sender:self];
-    else if(indexPath.section == 2 && indexPath.row == 1)
-        [self performSegueWithIdentifier:@"InformationSegue" sender:self];
+    if(indexPath.section == 2 && indexPath.row == 0) { [self performSegueWithIdentifier:@"StaffSegue" sender:self]; }
+    else if(indexPath.section == 2 && indexPath.row == 1) { [self performSegueWithIdentifier:@"InformationSegue" sender:self]; }
+    else if(indexPath.section == 2 && indexPath.row == 2) { [self performSegueWithIdentifier:@"ScheduleSegue" sender:self]; }
 }
 
 #pragma mark - search bar delegate

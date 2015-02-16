@@ -19,7 +19,6 @@
 
 @implementation IOS5ScheduleTableViewController
 {
-    UIAlertView *searchAlert;
     NSArray *schedules;
 }
 
@@ -36,23 +35,13 @@
 {
     [super viewDidLoad];
     
-	// Do any additional setup after loading the view.
-    self.navigationItem.hidesBackButton = YES;
-    
-    searchAlert = [[UIAlertView alloc] initWithTitle:@"Search a course" message:@"Please enter a course code (i.e. TI2200):" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Search", nil];
-    searchAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [[searchAlert textFieldAtIndex:0] setPlaceholder:@"Course code"];
+    [self searchForSchedule:_courseCode];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)searchPressed:(id)sender
-{
-    [searchAlert show];
 }
 
 - (NSString *)applyTimezoneFixForDate:(NSString *)date
@@ -119,15 +108,23 @@
     NSURLRequest *request = [client requestWithMethod:@"POST" path:url.absoluteString parameters:nil];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
     {
+        NSLog(@"%@", JSON);
+        
         if([JSON[@"rooster"][@"evenementLijst"] isKindOfClass:[NSNull class]])
         {
             schedules = [[NSArray alloc] init];
             [UIAlertView error:@"No results found. Please enter a valid course id."];
-            [MBProgressHUD hideHUDForView:self.tabBarController.view animated:YES];
-            return;
         }
-        schedules = JSON[@"rooster"][@"evenementLijst"][@"evenement"];
+        else if([JSON[@"rooster"][@"evenementLijst"][@"evenement"] isKindOfClass:[NSDictionary class]])
+        {
+            schedules = [[NSArray alloc] init];
+        }
+        else
+        {
+            schedules = JSON[@"rooster"][@"evenementLijst"][@"evenement"];
+        }
         [MBProgressHUD hideHUDForView:self.tabBarController.view animated:YES];
+        
         [self.tableView reloadData];
     }
     failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
@@ -138,17 +135,6 @@
     }];
     
     [operation start];
-}
-
-#pragma mark - UIAlertView delegate
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if(alertView == searchAlert && buttonIndex == 1)
-    {
-        NSString *text = [[searchAlert textFieldAtIndex:0] text];
-        [self searchForSchedule:text];
-    }
 }
 
 @end

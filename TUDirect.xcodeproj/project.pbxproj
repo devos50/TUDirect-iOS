@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1095F811197D057A00A4C567 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1095F810197D057A00A4C567 /* Images.xcassets */; };
+		10A7BCED1A9271DB0009DA80 /* 12-eye.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A7BCEB1A9271DB0009DA80 /* 12-eye.png */; };
+		10A7BCEE1A9271DB0009DA80 /* 12-eye@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A7BCEC1A9271DB0009DA80 /* 12-eye@2x.png */; };
 		9F10E7B816EA269B00B82097 /* 145-persondot.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F10E7B616EA269B00B82097 /* 145-persondot.png */; };
 		9F10E7B916EA269B00B82097 /* 145-persondot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F10E7B716EA269B00B82097 /* 145-persondot@2x.png */; };
 		9F10E7BD16EA270600B82097 /* GradesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F10E7BC16EA270600B82097 /* GradesTableViewController.m */; };
@@ -63,11 +65,12 @@
 		9FF5768016EA41BC000E6503 /* BuildingsInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF5767F16EA41BC000E6503 /* BuildingsInfoTableViewController.m */; };
 		9FF5768816EA4D34000E6503 /* 11-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF5768616EA4D34000E6503 /* 11-clock.png */; };
 		9FF5768916EA4D34000E6503 /* 11-clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF5768716EA4D34000E6503 /* 11-clock@2x.png */; };
-		9FF5768D16EA4DC8000E6503 /* SScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF5768C16EA4DC8000E6503 /* SScheduleTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1095F810197D057A00A4C567 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TUDirect/Images.xcassets; sourceTree = "<group>"; };
+		10A7BCEB1A9271DB0009DA80 /* 12-eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "12-eye.png"; sourceTree = "<group>"; };
+		10A7BCEC1A9271DB0009DA80 /* 12-eye@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "12-eye@2x.png"; sourceTree = "<group>"; };
 		9F10E7B616EA269B00B82097 /* 145-persondot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot.png"; sourceTree = "<group>"; };
 		9F10E7B716EA269B00B82097 /* 145-persondot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "145-persondot@2x.png"; sourceTree = "<group>"; };
 		9F10E7BB16EA270600B82097 /* GradesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradesTableViewController.h; sourceTree = "<group>"; };
@@ -154,8 +157,6 @@
 		9FF5767F16EA41BC000E6503 /* BuildingsInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildingsInfoTableViewController.m; sourceTree = "<group>"; };
 		9FF5768616EA4D34000E6503 /* 11-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-clock.png"; sourceTree = "<group>"; };
 		9FF5768716EA4D34000E6503 /* 11-clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11-clock@2x.png"; sourceTree = "<group>"; };
-		9FF5768B16EA4DC8000E6503 /* SScheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SScheduleTableViewController.h; sourceTree = "<group>"; };
-		9FF5768C16EA4DC8000E6503 /* SScheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SScheduleTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,8 +240,6 @@
 				9FF5767716EA3D76000E6503 /* CourseInformationExtraViewController.m */,
 				9FF5767E16EA41BC000E6503 /* BuildingsInfoTableViewController.h */,
 				9FF5767F16EA41BC000E6503 /* BuildingsInfoTableViewController.m */,
-				9FF5768B16EA4DC8000E6503 /* SScheduleTableViewController.h */,
-				9FF5768C16EA4DC8000E6503 /* SScheduleTableViewController.m */,
 				9FA6DE6016F8A45300A15E0A /* BuildingsMapViewController.h */,
 				9FA6DE6116F8A45300A15E0A /* BuildingsMapViewController.m */,
 				9F43AE4A16F8D5DF006F98F7 /* WorkplacesInfoTableViewController.h */,
@@ -274,6 +273,8 @@
 		9FDEBE4316E7F17B00EE0E42 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				10A7BCEB1A9271DB0009DA80 /* 12-eye.png */,
+				10A7BCEC1A9271DB0009DA80 /* 12-eye@2x.png */,
 				9F43AE5C16F9021B006F98F7 /* 96-book.png */,
 				9F43AE5D16F9021B006F98F7 /* 96-book@2x.png */,
 				9FF5768616EA4D34000E6503 /* 11-clock.png */,
@@ -389,6 +390,7 @@
 				9FDEBE1C16E7F0FD00EE0E42 /* InfoPlist.strings in Resources */,
 				9FDEBE2416E7F0FD00EE0E42 /* Default.png in Resources */,
 				9FDEBE2616E7F0FD00EE0E42 /* Default@2x.png in Resources */,
+				10A7BCED1A9271DB0009DA80 /* 12-eye.png in Resources */,
 				9FDEBE2816E7F0FD00EE0E42 /* Default-568h@2x.png in Resources */,
 				9FDEBE2B16E7F0FD00EE0E42 /* MainStoryboard.storyboard in Resources */,
 				9FDEBE4116E7F17800EE0E42 /* 103-map.png in Resources */,
@@ -398,6 +400,7 @@
 				9FDEBE7C16E7F57B00EE0E42 /* 60-signpost@2x.png in Resources */,
 				9F10E7B816EA269B00B82097 /* 145-persondot.png in Resources */,
 				9F10E7B916EA269B00B82097 /* 145-persondot@2x.png in Resources */,
+				10A7BCEE1A9271DB0009DA80 /* 12-eye@2x.png in Resources */,
 				9F10E7C016EA29FC00B82097 /* 17-bar-chart.png in Resources */,
 				9F10E7C116EA29FC00B82097 /* 17-bar-chart@2x.png in Resources */,
 				9FF5768816EA4D34000E6503 /* 11-clock.png in Resources */,
@@ -435,7 +438,6 @@
 				9FF5767016EA389F000E6503 /* StaffCourseViewController.m in Sources */,
 				9FF5767816EA3D76000E6503 /* CourseInformationExtraViewController.m in Sources */,
 				9FF5768016EA41BC000E6503 /* BuildingsInfoTableViewController.m in Sources */,
-				9FF5768D16EA4DC8000E6503 /* SScheduleTableViewController.m in Sources */,
 				9F557C1D16F714FE00C479AA /* TUAuthClient.m in Sources */,
 				9FA6DE6216F8A45300A15E0A /* BuildingsMapViewController.m in Sources */,
 				9F43AE4C16F8D5DF006F98F7 /* WorkplacesInfoTableViewController.m in Sources */,
