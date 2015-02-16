@@ -10,14 +10,14 @@
 
 @interface BuildingsInfoTableViewController ()
 
-@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
-@property (nonatomic, weak) IBOutlet UILabel *streetLabel;
-@property (nonatomic, weak) IBOutlet UILabel *numberLabel;
-@property (nonatomic, weak) IBOutlet UILabel *zipCodeLabel;
-@property (nonatomic, weak) IBOutlet UILabel *placeLabel;
-@property (nonatomic, weak) IBOutlet UILabel *latLabel;
-@property (nonatomic, weak) IBOutlet UILabel *longLabel;
-
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *streetLabel;
+@property (weak, nonatomic) IBOutlet UILabel *numberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *zipCodeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *placeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *buildingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *latLabel;
+@property (weak, nonatomic) IBOutlet UILabel *longLabel;
 
 @end
 
@@ -35,7 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     [self fillInTable];
 }
 
@@ -49,7 +49,7 @@
 {
     _nameLabel.text = _buildingInfo[@"naamEN"];
     
-    if([[_buildingInfo[@"fysiekAdres"] allKeys] count] == 0)
+    if([[_buildingInfo[@"fysiekAdres"] allKeys] count] == 0 || [_buildingInfo[@"fysiekAdres"][@"binnenlandsAdres"] isKindOfClass:[NSNull class]])
     {
         _streetLabel.text = @"-";
         _numberLabel.text = @"-";
@@ -58,15 +58,18 @@
         _latLabel.text = @"-";
         _longLabel.text = @"-";
     }
-    
-    _streetLabel.text = _buildingInfo[@"fysiekAdres"][@"binnenlandsAdres"][@"straat"];
-    _numberLabel.text = _buildingInfo[@"fysiekAdres"][@"binnenlandsAdres"][@"huisnummer"];
-    _zipCodeLabel.text = _buildingInfo[@"fysiekAdres"][@"binnenlandsAdres"][@"postcode"];
-    _placeLabel.text = _buildingInfo[@"fysiekAdres"][@"binnenlandsAdres"][@"plaats"];
-    if(!_buildingInfo[@"gpscoordinaten"][@"@lat"]) _latLabel.text = @"-";
-    else _latLabel.text = _buildingInfo[@"gpscoordinaten"][@"@lat"];
-    if(!_buildingInfo[@"gpscoordinaten"][@"@lon"]) _longLabel.text = @"-";
-    else _longLabel.text = _buildingInfo[@"gpscoordinaten"][@"@lon"];
+    else
+    {
+        _streetLabel.text = _buildingInfo[@"fysiekAdres"][@"binnenlandsAdres"][@"straat"];
+        _numberLabel.text = _buildingInfo[@"fysiekAdres"][@"binnenlandsAdres"][@"huisnummer"];
+        _zipCodeLabel.text = _buildingInfo[@"fysiekAdres"][@"binnenlandsAdres"][@"postcode"];
+        _placeLabel.text = _buildingInfo[@"fysiekAdres"][@"binnenlandsAdres"][@"plaats"];
+        if(!_buildingInfo[@"gpscoordinaten"][@"@lat"]) _latLabel.text = @"-";
+        else _latLabel.text = _buildingInfo[@"gpscoordinaten"][@"@lat"];
+        if(!_buildingInfo[@"gpscoordinaten"][@"@lon"]) _longLabel.text = @"-";
+        else _longLabel.text = _buildingInfo[@"gpscoordinaten"][@"@lon"];
+    }
+    _buildingLabel.text = _buildingInfo[@"locatieCode"];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

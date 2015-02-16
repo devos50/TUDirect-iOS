@@ -57,36 +57,6 @@
     [self loadGrades];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadGrades) name:@"com.devos.TUDirect.reloadGrades" object:nil];
-    
-    NSArray *vComp = [[UIDevice currentDevice].systemVersion componentsSeparatedByString:@"."];
-    
-    // set the UITableView to the right place
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    int bary = -1;
-    if([vComp[0] intValue] >= 7) bary = 64;
-    
-    if (screenRect.size.height == 568)
-    {
-        int taby = 120;
-        if([vComp[0] intValue] >= 7) taby = 95;
-        
-        [_segmentedBar setFrame:CGRectMake(-7, bary, 335, 31)];
-        [_tableView setFrame:CGRectMake(0, taby, 320, 425)];
-    }
-    else
-    {
-        int taby = 127;
-        if([vComp[0] intValue] >= 7) taby = 95;
-        
-        [_segmentedBar setFrame:CGRectMake(-7, bary, 335, 31)];
-        [_tableView setFrame:CGRectMake(0, taby, 320, 340)];
-    }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)loadGrades
@@ -97,7 +67,6 @@
     hud.labelText = @"Loading";
     
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"AccessToken"];
-    NSLog(@"token: %@", accessToken);
     NSString *urlstr = [kAllGradesURL stringByAppendingFormat:@"?oauth_token=%@", accessToken];
     if(showValid) urlstr = [kValidGradesURL stringByAppendingFormat:@"?oauth_token=%@", accessToken];
     
@@ -326,45 +295,6 @@
         [self.tableView reloadData];
     }
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 

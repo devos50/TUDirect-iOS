@@ -45,39 +45,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+        
     showBuildings = YES;
     [self loadBuildings];
-    
-    NSArray *vComp = [[UIDevice currentDevice].systemVersion componentsSeparatedByString:@"."];
-    
-    // set the UITableView to the right place
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    int bary = -1;
-    if([vComp[0] intValue] >= 7) bary = 64;
-    
-    if (screenRect.size.height == 568)
-    {
-        int taby = 120;
-        if([vComp[0] intValue] >= 7) taby = 95;
-        
-        [_segmentedBar setFrame:CGRectMake(-7, bary, 335, 31)];
-        [_tableView setFrame:CGRectMake(0, taby, 320, 425)];
-    }
-    else
-    {
-        int taby = 127;
-        if([vComp[0] intValue] >= 7) taby = 95;
-        
-        [_segmentedBar setFrame:CGRectMake(-7, bary, 335, 31)];
-        [_tableView setFrame:CGRectMake(0, taby, 320, 340)];
-    }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)loadBuildings
@@ -86,7 +56,7 @@
     hud.labelText = @"Loading";
     
     NSURL *url = [NSURL URLWithString:kBuildingsURL];
-    if(!showBuildings) url = [NSURL URLWithString:kWorkspacesURL];
+    if(!showBuildings) { url = [NSURL URLWithString:kWorkspacesURL]; }
     AFHTTPClient *client = [AFHTTPClient clientWithBaseURL:url];
     NSURLRequest *request = [client requestWithMethod:@"POST" path:url.absoluteString parameters:nil];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
@@ -100,11 +70,16 @@
                 NSMutableDictionary *newBuilding = [building mutableCopy];
                 
                 if([building isKindOfClass:[NSDictionary class]]) [buildings addObject:newBuilding];
+                
                 if([building[@"naamEN"] length] == 0 && [building[@"naamNL"] length] == 0)
                 {
                     newBuilding[@"naamEN"] = [NSString stringWithFormat:@"Building %@", building[@"locatieCode"]];
                 }
             }];
+            
+            // order alphabetically
+            NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"naamEN" ascending:YES];
+            buildings = [[buildings sortedArrayUsingDescriptors:@[sort]] mutableCopy];
             
             NSLog(@"buildings: %@", buildings);
             currentData = buildings;
@@ -147,7 +122,8 @@
     }
     else if([segue.identifier isEqualToString:@"MapSegue"])
     {
-        BuildingsMapViewController *vc = segue.destinationViewController;
+        UINavigationController *nvc = segue.destinationViewController;
+        BuildingsMapViewController *vc = (BuildingsMapViewController *) [nvc viewControllers][0];
         vc.buildings = currentData;
     }
 }
@@ -164,14 +140,6 @@
 {
     // Return the number of rows in the section.
     return currentData.count;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *inhoud = currentData[indexPath.row][@"naamEN"];
-    
-    CGSize labelSize = [inhoud sizeWithFont:[UIFont systemFontOfSize:18.0f] constrainedToSize:CGSizeMake(280, 10000) lineBreakMode:NSLineBreakByWordWrapping];
-    return labelSize.height + 20.0f > 44.0f ? labelSize.height + 20.0f : 44.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -211,8 +179,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     selectedIndex = indexPath.row;
-    if(showBuildings) [self performSegueWithIdentifier:@"BuildingInfo" sender:self];
-    else [self performSegueWithIdentifier:@"WorkplaceInfo" sender:self];
+    if(showBuildings) { [self performSegueWithIdentifier:@"BuildingInfo" sender:self]; }
+    else { [self performSegueWithIdentifier:@"WorkplaceInfo" sender:self]; }
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

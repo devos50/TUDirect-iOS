@@ -16,7 +16,6 @@
 		9F10E7C416EA2AE300B82097 /* SpecificProgressTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F10E7C316EA2AE300B82097 /* SpecificProgressTableViewController.m */; };
 		9F11F22316F9AC1C00D898C2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F11F22216F9AC1C00D898C2 /* MessageUI.framework */; };
 		9F1AFDBF16F7AFA6008FDAC3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1AFDBE16F7AFA6008FDAC3 /* MapKit.framework */; };
-		9F30C4D4170B06F70057EABD /* DetermineScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F30C4D3170B06F70057EABD /* DetermineScheduleViewController.m */; };
 		9F30C4DF170B0A7B0057EABD /* IOS5ScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F30C4DE170B0A7B0057EABD /* IOS5ScheduleTableViewController.m */; };
 		9F43AE4C16F8D5DF006F98F7 /* WorkplacesInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F43AE4B16F8D5DF006F98F7 /* WorkplacesInfoTableViewController.m */; };
 		9F43AE4F16F8D6E4006F98F7 /* RoomsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F43AE4E16F8D6E4006F98F7 /* RoomsTableViewController.m */; };
@@ -79,8 +78,6 @@
 		9F10E7C316EA2AE300B82097 /* SpecificProgressTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecificProgressTableViewController.m; sourceTree = "<group>"; };
 		9F11F22216F9AC1C00D898C2 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		9F1AFDBE16F7AFA6008FDAC3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		9F30C4D2170B06F70057EABD /* DetermineScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetermineScheduleViewController.h; sourceTree = "<group>"; };
-		9F30C4D3170B06F70057EABD /* DetermineScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetermineScheduleViewController.m; sourceTree = "<group>"; };
 		9F30C4DD170B0A7B0057EABD /* IOS5ScheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOS5ScheduleTableViewController.h; sourceTree = "<group>"; };
 		9F30C4DE170B0A7B0057EABD /* IOS5ScheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOS5ScheduleTableViewController.m; sourceTree = "<group>"; };
 		9F43AE4A16F8D5DF006F98F7 /* WorkplacesInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkplacesInfoTableViewController.h; sourceTree = "<group>"; };
@@ -252,8 +249,6 @@
 				9F43AE4E16F8D6E4006F98F7 /* RoomsTableViewController.m */,
 				9F43AE5416F8DC44006F98F7 /* RoomInfoTableViewController.h */,
 				9F43AE5516F8DC44006F98F7 /* RoomInfoTableViewController.m */,
-				9F30C4D2170B06F70057EABD /* DetermineScheduleViewController.h */,
-				9F30C4D3170B06F70057EABD /* DetermineScheduleViewController.m */,
 				9F30C4DD170B0A7B0057EABD /* IOS5ScheduleTableViewController.h */,
 				9F30C4DE170B0A7B0057EABD /* IOS5ScheduleTableViewController.m */,
 				9FE117B11713F9030052BECD /* AuthViewController.h */,
@@ -446,7 +441,6 @@
 				9F43AE4C16F8D5DF006F98F7 /* WorkplacesInfoTableViewController.m in Sources */,
 				9F43AE4F16F8D6E4006F98F7 /* RoomsTableViewController.m in Sources */,
 				9F43AE5616F8DC44006F98F7 /* RoomInfoTableViewController.m in Sources */,
-				9F30C4D4170B06F70057EABD /* DetermineScheduleViewController.m in Sources */,
 				9F30C4DF170B0A7B0057EABD /* IOS5ScheduleTableViewController.m in Sources */,
 				9FE117B31713F9030052BECD /* AuthViewController.m in Sources */,
 			);
@@ -538,7 +532,7 @@
 				GCC_PREFIX_HEADER = "TUTest/TUDirect-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/OAuth2Client/**";
 				INFOPLIST_FILE = "TUTest/TUDirect-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TUDirect;
 				WRAPPER_EXTENSION = app;
@@ -560,7 +554,7 @@
 				GCC_PREFIX_HEADER = "TUTest/TUDirect-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/OAuth2Client/**";
 				INFOPLIST_FILE = "TUTest/TUDirect-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = TUDirect;
 				WRAPPER_EXTENSION = app;

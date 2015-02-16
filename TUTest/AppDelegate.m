@@ -20,6 +20,8 @@
 {
     b = [[TUAuthClient alloc] initWithClientID:@"tudirect" clientSecret:@"36481f4d-0188-42e9-95a4-b99b3ff35ce9" redirectURI:@"http://ios-dev.no-ip.org/tuiosapp"];
     
+    
+    
     return YES;
 }
 

@@ -17,6 +17,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *minPointsLabel;
 @property (nonatomic, weak) IBOutlet UILabel *gotPointsLabel;
 @property (nonatomic, weak) IBOutlet UILabel *voldaanLabel;
+@property (weak, nonatomic) IBOutlet UILabel *studentNumberLabel;
 
 @end
 
@@ -54,19 +55,7 @@
     _minPointsLabel.text = _progress[@"minimum_punten_examenprogramma"];
     _gotPointsLabel.text = _progress[@"behaalde_punten_basisprogramma"];
     _voldaanLabel.text = [_progress[@"voldaan"] isEqualToString:@"J"] ? @"Yes" : @"No";
-}
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    _studentNumberLabel.text = _progress[@"studentnummer"];
 }
 
 @end
